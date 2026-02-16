@@ -27,7 +27,11 @@ public class PriceService {
         if (amount == null || vatPercent < 0) {
             return BigDecimal.ZERO.setScale(2, RoundingMode.HALF_UP);
         }
-        BigDecimal vatMultiplier = BigDecimal.valueOf(vatPercent).divide(BigDecimal.valueOf(100), 4, RoundingMode.HALF_UP);
+
+        BigDecimal vatMultiplier =
+            BigDecimal.valueOf(vatPercent)
+                .divide(BigDecimal.valueOf(100), 4, RoundingMode.HALF_UP);
+
         BigDecimal vat = amount.multiply(vatMultiplier);
         return amount.add(vat).setScale(2, RoundingMode.HALF_UP);
     }
