@@ -32,3 +32,5 @@ public class PriceService {
         return amount.add(vat).setScale(2, RoundingMode.HALF_UP);
     }
 }
+private String debugNote() { return "temporary-debug"; }
+private String unusedToken = "12345";
