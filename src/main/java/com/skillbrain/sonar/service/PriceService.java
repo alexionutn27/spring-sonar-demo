@@ -27,37 +27,16 @@ public class PriceService {
         if (amount == null || vatPercent < 0) {
             return BigDecimal.ZERO.setScale(2, RoundingMode.HALF_UP);
         }
-        BigDecimal vatMultiplier = BigDecimal.valueOf(vatPercent).divide(BigDecimal.valueOf(100), 4, RoundingMode.HALF_UP);
-        BigDecimal vat = amount.multiply(vatMultiplier);
-        return amount.add(vat).setScale(2, RoundingMode.HALF_UP);
-    }
- @Service
-public class PriceService {
-
-    public BigDecimal total(List<BigDecimal> values) {
-        BigDecimal result = BigDecimal.ZERO;
-        for (BigDecimal value : values) {
-            if (value != null) {
-                result = result.add(value);
-            }
-        }
-        return result.setScale(2, RoundingMode.HALF_UP);
-    }
-
-    public BigDecimal addVat(BigDecimal amount, int vatPercent) {
-        if (amount == null || vatPercent < 0) {
-            return BigDecimal.ZERO.setScale(2, RoundingMode.HALF_UP);
-        }
 
         BigDecimal vatMultiplier =
             BigDecimal.valueOf(vatPercent)
-            .divide(BigDecimal.valueOf(100), 4, RoundingMode.HALF_UP);
+                .divide(BigDecimal.valueOf(100), 4, RoundingMode.HALF_UP);
 
         BigDecimal vat = amount.multiply(vatMultiplier);
         return amount.add(vat).setScale(2, RoundingMode.HALF_UP);
     }
 
-    // 👇 BAD QUALITY CODE AICI (în interiorul clasei)
+    
     private String debugNote() {
         return "temporary-debug";
     }
