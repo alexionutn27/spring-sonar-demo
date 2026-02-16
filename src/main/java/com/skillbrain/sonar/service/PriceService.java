@@ -31,6 +31,20 @@ public class PriceService {
         BigDecimal vat = amount.multiply(vatMultiplier);
         return amount.add(vat).setScale(2, RoundingMode.HALF_UP);
     }
+    @Service
+public class PriceService {
+
+    public BigDecimal total(List<BigDecimal> values) {
+        ...
+    }
+
+    public BigDecimal addVat(BigDecimal amount, int vatPercent) {
+        ...
+    }
+
+    private String debugNote() { 
+        return "temporary-debug"; 
+    }
+
+    private String unusedToken = "12345";
 }
-private String debugNote() { return "temporary-debug"; }
-private String unusedToken = "12345";
