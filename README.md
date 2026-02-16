@@ -63,3 +63,4 @@ Workflow-ul este în `.github/workflows/quality-scan.yml` și ține configurarea
 3. Dai commit + PR.
 4. Verifici în SonarQube Cloud Issues + Quality Gate.
 5. Repari problema și verifici că gate-ul revine pe verde.
+6.
